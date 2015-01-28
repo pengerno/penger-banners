@@ -16,6 +16,18 @@ module.exports = function(grunt) {
 					dest: '.tmp',
 					ext: '.css'
 				}]
+			},
+			dev: {
+				options: {
+					style: 'expanded'
+				},
+				files: [{
+					expand: true,
+					cwd: 'src',
+					src: ['**/*.scss'],
+					dest: 'src',
+					ext: '.css'
+				}]
 			}
 		},
 
@@ -25,6 +37,12 @@ module.exports = function(grunt) {
 				cwd: '.tmp',
 				src: '**/*.css',
 				dest: '.tmp'
+			},
+			dev: {
+				expand: true,
+				cwd: 'src',
+				src: '**/*.css',
+				dest: 'src'
 			}
 		},
 
@@ -96,7 +114,29 @@ module.exports = function(grunt) {
 			tmp: {
 				src: ['.tmp']
 			}
-		}
+		},
+
+		watch: {
+			style: {
+				files: 'src/**/*.scss',
+				tasks: ['sass:dev', 'autoprefixer:dev']
+			}
+		},
+
+		browserSync: {
+			bsFiles: {
+				src: [
+					'src/**/*.html',
+					'src/**/*.css'
+				]
+			},
+			options: {
+				watchTask: true,
+				server: {
+					baseDir: 'src/'
+				}
+			}
+		},
 	});
 
 	grunt.loadNpmTasks('grunt-sass');
@@ -107,17 +147,26 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-image-embed');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-browser-sync');
 
 	grunt.registerTask('default', [
 		'sync:tmp',
-		'sass',
+		'sass:tmp',
 		'imagemin',
 		'imageEmbed',
-		'autoprefixer',
+		'autoprefixer:tmp',
 		'inline_style',
 		'htmlmin',
 		'sync:build',
 		'clean'
+	]);
+
+	grunt.registerTask('dev', [
+		'sass:dev',
+		'autoprefixer:dev',
+		'browserSync',
+		'watch'
 	]);
 
 }
