@@ -1,0 +1,101 @@
+@import "../common";
+
+.banner {
+	box-sizing: border-box;
+	border-style: solid;
+	border-width: 3px;
+	border-image: url("border.png") 3 repeat;
+	width: 980px;
+	height: 150px;
+}
+
+.slide1 {
+	@include asset("bg1.jpg");
+
+	.character {
+		@include asset("character.png", 172px, 189px);
+		top: -20px;
+		right: 200px;
+	}
+
+	.device {
+		@include asset("device.png", 160px, 92px);
+		animation: deviceAnim 9s infinite normal ease-in-out;
+		bottom: 0;
+		right: 340px;
+	}
+
+	.bubble {
+		@include asset("bubble.png", 365px, 125px);
+		animation: bubbleAnim 9s infinite normal ease-in-out;
+		top: 10px;
+		left: 75px;
+	}
+
+	.witness {
+		@include asset("witness.png", 79px, 31px);
+		top: 10px;
+		right: 400px;
+	}
+
+	.logo {
+		@include asset("logo.png", 144px, 82px);
+		right: 30px;
+		top: 35px;
+	}
+}
+
+.slide2 {	
+	@include asset("bg2.jpg");
+	animation: slide2Anim 9s infinite normal ease-in-out;
+
+	.title {
+		@include asset("title.png", 604px, 34px);
+		top: 25px;
+		left: 100px;
+	}
+
+	.button {
+		@include asset("button.png", 152px, 46px);
+		animation: buttonAnim 9s infinite normal ease-in-out;
+		top: 75px;
+		left: 300px;
+	}
+
+	.logo {
+		@include asset("logo.png", 144px, 82px);
+		right: 30px;
+		top: 35px;
+	}
+}
+
+@keyframes bubbleAnim {
+	0%		{ opacity: 0; }
+	10%		{ opacity: 1; }
+	40%		{ opacity: 1; }
+	50%		{ opacity: 0; }
+	100%	{ opacity: 0; }
+}
+
+@keyframes deviceAnim {
+	0% 		{ transform: translateX(-5%); }
+	10%		{ transform: translateX(5%); }
+	40%		{ transform: translateX(5%); }
+	50%		{ transform: translateX(5%); }
+	100%	{ transform: translateX(-5%); }
+}
+
+@keyframes slide2Anim {
+	0%		{ transform: translateX(-100%); }
+	50%		{ transform: translateX(-100%); }
+	60%		{ transform: translateX(0%); }
+	90%		{ transform: translateX(0%); }
+	99.9%	{ transform: translateX(100%); }
+	100%	{ transform: translateX(100%); }
+}
+
+@keyframes buttonAnim {
+	70% { transform: scale(1,1); }
+	75% { transform: scale(1.3,1.3); }
+	80% { transform: scale(1,1); }
+}

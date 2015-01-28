@@ -1,0 +1,28 @@
+@mixin asset($file, $width: false, $height: false) {
+	background-image: url("#{$file}");
+	@if $width {
+		width: $width;
+	}
+	@if $height {
+		height: $height;
+	}
+}
+
+.banner {
+	overflow: hidden;
+	position: relative;
+}
+
+.slide {
+	background-size: cover;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.asset {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: absolute;
+}
