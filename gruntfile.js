@@ -78,6 +78,12 @@ module.exports = function(grunt) {
 					dest: 'build'
 				}]
 			}
+		},
+
+		clean: {
+			tmp: {
+				src: ['.tmp']
+			}
 		}
 	});
 
@@ -87,6 +93,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-inline-styles');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 
 	grunt.registerTask('default', [
 		'sync:tmp',
@@ -95,7 +102,8 @@ module.exports = function(grunt) {
 		'inline_style',
 		'htmlmin',
 		'imagemin',
-		'sync:build'
+		'sync:build',
+		'clean'
 	]);
 
 }
