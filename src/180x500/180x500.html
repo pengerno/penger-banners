@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="180x500.css">
 </head>
 <body>
-  <div class="banner">
+  <div class="banner" onclick="window.open(clickTAG, '_blank');">
     <div class="slide slide1">
       <div class="asset character"></div>
       <div class="asset device"></div>
@@ -24,5 +24,15 @@
     <div class="borderRight"></div>
     <div class="borderLeft"></div>
   </div>
+  <script>
+    function getUrlVars() {
+      var vars = {};
+      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+      });
+      return vars;
+    }
+    var clickTAG = getUrlVars()['clickTAG'];
+  </script>
 </body>
 </html>
