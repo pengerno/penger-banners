@@ -9,6 +9,10 @@
 	height: 500px;
 }
 
+.logo {
+	@include asset("logo.png", 100%, 68px);
+}
+
 .slide1 {
 	@include asset("bg1.jpg");
 
@@ -38,7 +42,6 @@
 	}
 
 	.logo {
-		@include asset("logo.png", 100%, 68px);
 		top: 45px;
 	}
 }
@@ -59,7 +62,6 @@
 	}
 
 	.logo {
-		@include asset("logo.png", 100%, 68px);
 		bottom: 45px;
 	}
 }

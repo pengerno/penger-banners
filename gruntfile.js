@@ -41,6 +41,7 @@ module.exports = function(grunt) {
 			tmp: {
 				options: {
 					minifyCSS: true,
+					minifyJS: true,
 					collapseWhitespace: true
 				},
 				files: [{
@@ -63,6 +64,17 @@ module.exports = function(grunt) {
 			}
 		},
 
+		imageEmbed: {
+			tmp: {
+				files: [{
+					expand: true,
+					cwd: '.tmp',
+					src: ['**/*.css'],
+					dest: '.tmp'
+				}]
+			}
+		},
+
 		sync: {
 			tmp: {
 				files: [{
@@ -74,7 +86,7 @@ module.exports = function(grunt) {
 			build: {
 				files: [{
 					cwd: '.tmp',
-					src: ['**/*.{html,png,jpg,jpeg,gif}'],
+					src: ['**/*.html'],
 					dest: 'build'
 				}]
 			}
@@ -94,14 +106,16 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-image-embed');
 
 	grunt.registerTask('default', [
 		'sync:tmp',
 		'sass',
+		'imagemin',
+		'imageEmbed',
 		'autoprefixer',
 		'inline_style',
 		'htmlmin',
-		'imagemin',
 		'sync:build',
 		'clean'
 	]);
