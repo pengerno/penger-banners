@@ -1,0 +1,239 @@
+body {
+  margin: 0; }
+
+.banner {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative; }
+
+.slide {
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+.asset {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute; }
+
+.banner {
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 3px;
+  -webkit-border-image: url("border.png") 3 repeat;
+       -o-border-image: url("border.png") 3 repeat;
+          border-image: url("border.png") 3 repeat;
+  width: 180px;
+  height: 500px; }
+
+.logo {
+  background-image: url("logo.png");
+  width: 100%;
+  height: 68px; }
+
+.slide1 {
+  background-image: url("bg1.jpg"); }
+  .slide1 .character {
+    background-image: url("character.png");
+    width: 177px;
+    height: 195px;
+    bottom: 0;
+    left: 70px; }
+  .slide1 .device {
+    background-image: url("device.png");
+    width: 162px;
+    height: 94px;
+    -webkit-animation: deviceAnim 9s infinite normal ease-in-out;
+            animation: deviceAnim 9s infinite normal ease-in-out;
+    bottom: 0;
+    left: 10px; }
+  .slide1 .bubble {
+    background-image: url("bubble.png");
+    width: 100%;
+    height: 131px;
+    -webkit-animation: bubbleAnim 9s infinite normal ease-in-out;
+            animation: bubbleAnim 9s infinite normal ease-in-out;
+    top: 170px; }
+  .slide1 .witness {
+    background-image: url("witness.png");
+    width: 57px;
+    height: 23px;
+    bottom: 160px;
+    left: 10px; }
+  .slide1 .logo {
+    top: 45px; }
+
+.slide2 {
+  background-image: url("bg2.jpg");
+  -webkit-animation: slide2Anim 9s infinite normal ease-in-out;
+          animation: slide2Anim 9s infinite normal ease-in-out; }
+  .slide2 .title {
+    background-image: url("title.png");
+    width: 100%;
+    height: 89px;
+    top: 25%; }
+  .slide2 .button {
+    background-image: url("button.png");
+    width: 100%;
+    height: 46px;
+    -webkit-animation: buttonAnim 9s infinite normal ease-in-out;
+            animation: buttonAnim 9s infinite normal ease-in-out;
+    top: 50%; }
+  .slide2 .logo {
+    bottom: 45px; }
+
+@-webkit-keyframes bubbleAnim {
+
+  0% {
+    opacity: 0; }
+
+  10% {
+    opacity: 1; }
+
+  40% {
+    opacity: 1; }
+
+  50% {
+    opacity: 0; }
+
+  100% {
+    opacity: 0; } }
+
+@keyframes bubbleAnim {
+  0% {
+    opacity: 0; }
+
+  10% {
+    opacity: 1; }
+
+  40% {
+    opacity: 1; }
+
+  50% {
+    opacity: 0; }
+
+  100% {
+    opacity: 0; } }
+
+@-webkit-keyframes deviceAnim {
+
+  0% {
+    -webkit-transform: translateX(-5%);
+            transform: translateX(-5%); }
+
+  10% {
+    -webkit-transform: translateX(5%);
+            transform: translateX(5%); }
+
+  40% {
+    -webkit-transform: translateX(5%);
+            transform: translateX(5%); }
+
+  50% {
+    -webkit-transform: translateX(5%);
+            transform: translateX(5%); }
+
+  100% {
+    -webkit-transform: translateX(-5%);
+            transform: translateX(-5%); } }
+
+@keyframes deviceAnim {
+  0% {
+    -webkit-transform: translateX(-5%);
+            transform: translateX(-5%); }
+
+  10% {
+    -webkit-transform: translateX(5%);
+            transform: translateX(5%); }
+
+  40% {
+    -webkit-transform: translateX(5%);
+            transform: translateX(5%); }
+
+  50% {
+    -webkit-transform: translateX(5%);
+            transform: translateX(5%); }
+
+  100% {
+    -webkit-transform: translateX(-5%);
+            transform: translateX(-5%); } }
+
+@-webkit-keyframes slide2Anim {
+
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); }
+
+  50% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); }
+
+  60% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%); }
+
+  90% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%); }
+
+  99.9% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
+
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); } }
+
+@keyframes slide2Anim {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); }
+
+  50% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); }
+
+  60% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%); }
+
+  90% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%); }
+
+  99.9% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
+
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); } }
+
+@-webkit-keyframes buttonAnim {
+
+  70% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+
+  75% {
+    -webkit-transform: scale(1.3, 1.3);
+            transform: scale(1.3, 1.3); }
+
+  80% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
+
+@keyframes buttonAnim {
+  70% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+
+  75% {
+    -webkit-transform: scale(1.3, 1.3);
+            transform: scale(1.3, 1.3); }
+
+  80% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
