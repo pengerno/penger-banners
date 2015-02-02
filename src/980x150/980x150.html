@@ -4,22 +4,6 @@
   <meta charset="UTF-8">
   <title>Penger.no</title>
   <link rel="stylesheet" href="980x150.css">
-</head>
-<body>
-  <div class="banner" onclick="window.open(clickTAG, '_blank');">
-    <div class="slide slide1">
-      <div class="asset character"></div>
-      <div class="asset device"></div>
-      <div class="asset bubble"></div>
-      <div class="asset witness"></div>
-      <div class="asset logo"></div>
-    </div>
-    <div class="slide slide2">            
-      <div class="asset title"></div>
-      <div class="asset button"></div>
-      <div class="asset logo"></div>
-    </div>
-  </div>
   <script>
     function getUrlVars() {
       var vars = {};
@@ -30,5 +14,23 @@
     }
     var clickTAG = getUrlVars()['clickTAG'];
   </script>
+</head>
+<body>
+  <div id="banner" onclick="window.open(clickTAG, 'new_window');">
+    <div class="container">
+      <div class="slide slide1">
+        <div class="asset character"></div>
+        <div class="asset device"></div>
+        <div class="asset bubble"></div>
+        <div class="asset witness"></div>
+        <div class="asset logo"></div>
+      </div>
+      <div class="slide slide2">            
+        <div class="asset title"></div>
+        <div class="asset button"></div>
+        <div class="asset logo"></div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

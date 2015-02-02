@@ -12,7 +12,8 @@ body {
 	margin: 0;
 }
 
-.banner {
+.container {
+	box-sizing: border-box;
 	cursor: pointer;
 	overflow: hidden;
 	position: relative;

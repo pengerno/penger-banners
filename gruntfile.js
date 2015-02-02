@@ -157,7 +157,7 @@ module.exports = function(grunt) {
 		'imageEmbed',
 		'autoprefixer:tmp',
 		'inline_style',
-		'htmlmin',
+		//'htmlmin',
 		'sync:build',
 		'clean'
 	]);
