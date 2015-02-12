@@ -77,7 +77,8 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: '.tmp',
 					src: ['**/*.{jpg,png,gif}'],
-					dest: '.tmp'
+					// dest: '.tmp'
+					dest: 'build'
 				}]
 			}
 		},
@@ -154,7 +155,7 @@ module.exports = function(grunt) {
 		'sync:tmp',
 		'sass:tmp',
 		'imagemin',
-		'imageEmbed',
+		// 'imageEmbed',
 		'autoprefixer:tmp',
 		'inline_style',
 		//'htmlmin',
